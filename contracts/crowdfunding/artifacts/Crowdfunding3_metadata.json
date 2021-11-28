@@ -7,12 +7,61 @@
 		"abi": [
 			{
 				"inputs": [],
+				"name": "balance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "nombre_donante",
+						"type": "string"
+					}
+				],
+				"name": "donar",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getInfoProy",
 				"outputs": [
 					{
 						"internalType": "string",
 						"name": "",
 						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getUltimaDonacion",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					},
 					{
 						"internalType": "string",
@@ -80,11 +129,11 @@
 	},
 	"sources": {
 		"contracts/crowdfunding/Crowdfunding-3-1.sol": {
-			"keccak256": "0xeffc43e36b7e71aeb2d1653498959b0909cfaa9fda736a2c55b76269f56591b8",
+			"keccak256": "0x4683144a4d8887555026b5e465985f526b7f4adf64c06235053d642ae1b63278",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://69c05875b2f5658ffeec5d6eed4ebc2f313d176fdd00a4c0053bd81de1beb4a1",
-				"dweb:/ipfs/Qmcx2sjhdVEyo7DCFRUo9ExotFrHyHQ1R4fWUAXCuQK1F3"
+				"bzz-raw://49ea63bcc28db104a8f0e294a732ea10d2500061e3133ea01bc5cee4b3609ee1",
+				"dweb:/ipfs/QmRfALUbMLdrVyVRcLPUy1yQ4PNx3NfNpSjVPriKa7MsBJ"
 			]
 		}
 	},
