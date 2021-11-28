@@ -41,6 +41,11 @@ contract Crowdfunding3 {
         origen  = msg.sender;
         donante = nombre_donante;
         monto   = msg.value;
+
+        // Etapa 4: pagar al artista
+        if (address(this).balance >= aRecaudar) {
+            pagar();
+        }
     }
 
     function getUltimaDonacion() public view returns (address, string memory, uint){
@@ -51,6 +56,10 @@ contract Crowdfunding3 {
         return address(this).balance;
     }
 
-    
+    // Etapa 4: pagar al artista
+    function pagar() private {
+        dirDePago.transfer(address(this).balance);
+        // habria que hacer otras cosas como emitir un evento y dejar el proyecto en estado cerrado.
+    }
     
 }
