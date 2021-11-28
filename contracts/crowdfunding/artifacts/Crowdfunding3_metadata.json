@@ -7,6 +7,24 @@
 		"abi": [
 			{
 				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnerSet",
+				"type": "event"
+			},
+			{
+				"inputs": [],
 				"name": "balance",
 				"outputs": [
 					{
@@ -49,6 +67,11 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -114,7 +137,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/crowdfunding/Crowdfunding-3-1.sol": "Crowdfunding3"
+			"contracts/crowdfunding/Crowdfunding-3-2.sol": "Crowdfunding3"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -128,12 +151,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/crowdfunding/Crowdfunding-3-1.sol": {
-			"keccak256": "0x4683144a4d8887555026b5e465985f526b7f4adf64c06235053d642ae1b63278",
+		"contracts/crowdfunding/Crowdfunding-3-2.sol": {
+			"keccak256": "0xc8f113085ae4ae7316dcf08b21ca3e4f4d3990688597d1448bb4ecc9008df000",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://49ea63bcc28db104a8f0e294a732ea10d2500061e3133ea01bc5cee4b3609ee1",
-				"dweb:/ipfs/QmRfALUbMLdrVyVRcLPUy1yQ4PNx3NfNpSjVPriKa7MsBJ"
+				"bzz-raw://b789e17c88be2f0bf0505d3ea83ff839a5988cd488755c1b39e9a438441b6cc6",
+				"dweb:/ipfs/QmfS1TTmQEbytchg6NfcZyZiHFnXMPdiTs7erdz8cBRhjN"
 			]
 		}
 	},
