@@ -9,6 +9,8 @@ contract Crowdfunding3 {
     address private owner;
     address payable private dirDePago;
         
+    
+    //Etapa 7: Eventos
     event OwnerSet(address indexed newOwner);// event for EVM logging
         
     constructor() {
@@ -22,14 +24,24 @@ contract Crowdfunding3 {
     string private artista  = "Desconocido";       // nombre del artista o emprendedor
     uint private aRecaudar  = 3000000000000000000; // monto TOTAL a recaudar (3 eth por default)
 
+    //Etapa 5: Estado
+    enum Estado {
+        Abierto,
+        Supendido,
+        Cerrado,
+        Expirado
+    }       
+    Estado private estado = Estado.Abierto;
+
+
     function setInfoProy(string memory nombre_proyecto, string memory nombre_artista, uint monto_a_recaudar) public {
         proyecto  = nombre_proyecto;
         artista   = nombre_artista;
         aRecaudar = monto_a_recaudar;
     }
 
-    function getInfoProy() public view returns (string memory, string memory, uint, address){
-        return (proyecto, artista, aRecaudar, dirDePago);
+    function getInfoProy() public view returns (string memory, string memory, uint, address, Estado){
+        return (proyecto, artista, aRecaudar, dirDePago, estado);
     }
 
     // Etapa 2: Donacion
@@ -60,6 +72,8 @@ contract Crowdfunding3 {
     function pagar() private {
         dirDePago.transfer(address(this).balance);
         // habria que hacer otras cosas como emitir un evento y dejar el proyecto en estado cerrado.
+
+        estado = Estado.Cerrado;
     }
     
 }
