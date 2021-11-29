@@ -51,12 +51,25 @@
 			},
 			{
 				"inputs": [],
-				"name": "estado",
+				"name": "getDonaciones",
 				"outputs": [
 					{
-						"internalType": "enum Crowdfunding3.Estado",
+						"internalType": "uint256[]",
 						"name": "",
-						"type": "uint8"
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDonantes",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
 					}
 				],
 				"stateMutability": "view",
@@ -170,11 +183,11 @@
 	},
 	"sources": {
 		"contracts/crowdfunding/Crowdfunding-3-2.sol": {
-			"keccak256": "0xaa1950b171950eba6fb18aa56b86fa1c34e229eb1e17bbd220d6b654d44d213f",
+			"keccak256": "0x0cbd1b0759e4807cecb45ea7bcb4897b76033519773faed5818d48864cb2ef36",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://05ce3c955bdd687d98db0f39c57221b35c364bb596d9fe81caa60186951b10c4",
-				"dweb:/ipfs/QmbptzXy2ZJiMJYqjx9eMvks7h8U7gTfBoRvYi9M84fw1J"
+				"bzz-raw://823e9b1f61b5d5ca4e1c5fae02084f885adce4a126a34b49754d08c3c27d1466",
+				"dweb:/ipfs/QmZLTi68DTZukzbgnCyqwSmx8kRXbzEHycTmGsS18m7XrZ"
 			]
 		}
 	},
