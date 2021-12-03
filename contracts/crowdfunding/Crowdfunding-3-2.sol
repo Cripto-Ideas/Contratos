@@ -16,14 +16,21 @@ contract Crowdfunding3 {
     event PagoDeFondos(address beneficiario);
 
     //Etapa 8: Modificadores
-    // Modificadores del estado del proyecto
-
-    modifier enEstado(Estado _estado) {
-
-        require(estado == _estado);
-
+    // modifier to check if caller is owner
+    modifier isOwner() {
+        // If the first argument of 'require' evaluates to 'false', execution terminates and all
+        // changes to the state and to Ether balances are reverted.
+        // This used to consume all gas in old EVM versions, but not anymore.
+        // It is often a good idea to use 'require' to check if functions are called correctly.
+        // As a second argument, you can also provide an explanation about what went wrong.
+        require(msg.sender == owner, "Caller is not owner");
         _;
+    }
 
+    // Modificadores del estado del proyecto
+    modifier enEstado(Estado _estado) {
+        require(estado == _estado);
+        _;
     }
         
     constructor() {
@@ -51,7 +58,7 @@ contract Crowdfunding3 {
     string[] private donantes;
     uint[] private donaciones;
 
-    function setInfoProy(string memory nombre_proyecto, string memory nombre_artista, uint monto_a_recaudar) public {
+    function setInfoProy(string memory nombre_proyecto, string memory nombre_artista, uint monto_a_recaudar) public isOwner {
         proyecto  = nombre_proyecto;
         artista   = nombre_artista;
         aRecaudar = monto_a_recaudar;
@@ -66,7 +73,7 @@ contract Crowdfunding3 {
     string private donante; // nombre del ultimo donante/aportante/mecenas
     uint private monto;     // ultimo monto donado
 
-    function donar(string memory nombre_donante) enEstado(Estado.Abierto) public payable {
+    function donar(string memory nombre_donante) public payable enEstado(Estado.Abierto) {
         origen  = msg.sender;
         donante = nombre_donante;
         monto   = msg.value;
