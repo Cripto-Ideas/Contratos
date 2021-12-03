@@ -17,6 +17,7 @@ contract Crowdfunding3 {
 
     //Etapa 8: Modificadores
     // Modificadores del estado del proyecto
+
     modifier enEstado(Estado _estado) {
 
         require(estado == _estado);
@@ -65,7 +66,7 @@ contract Crowdfunding3 {
     string private donante; // nombre del ultimo donante/aportante/mecenas
     uint private monto;     // ultimo monto donado
 
-    function donar(string memory nombre_donante) public payable {
+    function donar(string memory nombre_donante) enEstado(Estado.Abierto) public payable {
         origen  = msg.sender;
         donante = nombre_donante;
         monto   = msg.value;
