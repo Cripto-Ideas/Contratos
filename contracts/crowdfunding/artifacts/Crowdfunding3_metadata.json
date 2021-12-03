@@ -14,6 +14,31 @@
 				"anonymous": false,
 				"inputs": [
 					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "origen",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "donante",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "monto",
+						"type": "uint256"
+					}
+				],
+				"name": "DonacionDeFondos",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
 						"indexed": true,
 						"internalType": "address",
 						"name": "newOwner",
@@ -21,6 +46,19 @@
 					}
 				],
 				"name": "OwnerSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "beneficiario",
+						"type": "address"
+					}
+				],
+				"name": "PagoDeFondos",
 				"type": "event"
 			},
 			{
@@ -183,11 +221,11 @@
 	},
 	"sources": {
 		"contracts/crowdfunding/Crowdfunding-3-2.sol": {
-			"keccak256": "0x0cbd1b0759e4807cecb45ea7bcb4897b76033519773faed5818d48864cb2ef36",
+			"keccak256": "0x88db349ff0a29e9f105290ec9045e97b217179c022d9388a9d846123ddd7efe7",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://823e9b1f61b5d5ca4e1c5fae02084f885adce4a126a34b49754d08c3c27d1466",
-				"dweb:/ipfs/QmZLTi68DTZukzbgnCyqwSmx8kRXbzEHycTmGsS18m7XrZ"
+				"bzz-raw://19a1fc20b2dd49034d5502a92ae1e284d6adafd6b73f55ed43cbf2f49e1b3ea1",
+				"dweb:/ipfs/QmVqUyMFZRcdcE8yAmag6rqzMJH9xG5ujuZ2zSw8iQ1bQQ"
 			]
 		}
 	},

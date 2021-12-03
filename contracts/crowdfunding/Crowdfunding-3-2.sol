@@ -9,8 +9,21 @@ contract Crowdfunding3 {
     address private owner;
     address payable private dirDePago;
         
-    //Etapa 7: Eventos
-    event OwnerSet(address indexed newOwner);// event for EVM logging
+    // Etapa 7: Eventos (owner, example)
+    event OwnerSet(address indexed newOwner); // event for EVM logging
+    // Etapa 7: Eventos de donacion y pago de fondos
+    event DonacionDeFondos(address origen, string donante, uint monto);
+    event PagoDeFondos(address beneficiario);
+
+    //Etapa 8: Modificadores
+    // Modificadores del estado del proyecto
+    modifier enEstado(Estado _estado) {
+
+        require(estado == _estado);
+
+        _;
+
+    }
         
     constructor() {
         owner = msg.sender; // 'msg.sender' is sender of current call, contract deployer for a constructor
@@ -61,9 +74,12 @@ contract Crowdfunding3 {
         donantes.push(nombre_donante);
         donaciones.push(monto);
         
+        emit DonacionDeFondos(origen, donante, monto);
+
         // Etapa 4: pagar al artista
         if (address(this).balance >= aRecaudar) {
             pagar();
+
         }
     }
 
@@ -80,7 +96,8 @@ contract Crowdfunding3 {
         dirDePago.transfer(address(this).balance);
         // habria que hacer otras cosas como emitir un evento y dejar el proyecto en estado cerrado.
 
-        estado = Estado.Cerrado;
+        estado = Estado.Cerrado;        
+        emit PagoDeFondos(dirDePago);
     }
     
     function getDonantes() public view returns (string[] memory){
