@@ -3,7 +3,8 @@
 // Version of Solidity compiler this program was written for
 pragma solidity ^0.6.4;
 
-contract Owned {
+// Our first contract is a faucet!
+contract Faucet {
     address payable owner;
 
     // Contract constructor: set owner
@@ -16,18 +17,14 @@ contract Owned {
         require(msg.sender == owner);
         _;
     }
-}
 
-contract Mortal is Owned {
+    // Accept any incoming amount
+    receive() external payable {}
+
     // Contract destructor
     function destroy() public onlyOwner {
         selfdestruct(owner);
     }
-}
-
-contract Faucet is Mortal {
-    // Accept any incoming amount
-    receive() external payable {}
 
     // Give out ether to anyone who asks
     function withdraw(uint withdraw_amount) public {
