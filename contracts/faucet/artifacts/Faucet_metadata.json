@@ -6,6 +6,44 @@
 	"output": {
 		"abi": [
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Deposit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdrawal",
+				"type": "event"
+			},
+			{
 				"inputs": [],
 				"name": "destroy",
 				"outputs": [],
@@ -54,10 +92,10 @@
 	},
 	"sources": {
 		"contracts/faucet/Faucet.sol": {
-			"keccak256": "0x3f28fa8c8521e799ed3fe5d65240615c2ee4a799ebe32990facb7d22b192d040",
+			"keccak256": "0xda78b887432dbe1b001378ed27029c76b01d5c6e62dcfcef92b55069a5b994c3",
 			"urls": [
-				"bzz-raw://afbf0ee3223f0c33cdf55a7548a6dd5fc99956e02b2f895b6068240e837ae903",
-				"dweb:/ipfs/Qma5STGt2cX1dvhMYEw5ErFxAKurRWzoFX6kDjvpHbWLiw"
+				"bzz-raw://b61c68decb884d0a944c36a26f1ba819d2b45f566f497cc0d2c8d8039d054285",
+				"dweb:/ipfs/Qmd5mVE2wvwqt3cjjE9sR1iPyVs51zAmEYpz21hnwiPSWH"
 			]
 		}
 	},
