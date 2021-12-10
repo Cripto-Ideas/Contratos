@@ -9,6 +9,52 @@
 				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "ChangeOwner",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "Destroy",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "change",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "destroy",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -20,7 +66,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/faucet/Faucet.sol": "Owned"
+			"contracts/faucet/SmartWallet.sol": "Owned"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -34,11 +80,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/faucet/Faucet.sol": {
-			"keccak256": "0xda78b887432dbe1b001378ed27029c76b01d5c6e62dcfcef92b55069a5b994c3",
+		"contracts/faucet/SmartWallet.sol": {
+			"keccak256": "0x2b3b44d61a08b722b1113d00846a740e5b78f5ade7661c4c798776395a06e6e5",
 			"urls": [
-				"bzz-raw://b61c68decb884d0a944c36a26f1ba819d2b45f566f497cc0d2c8d8039d054285",
-				"dweb:/ipfs/Qmd5mVE2wvwqt3cjjE9sR1iPyVs51zAmEYpz21hnwiPSWH"
+				"bzz-raw://c31a12ea129917316245a6fcdb9642964744d6488f01a75d3d86b3afde83ff33",
+				"dweb:/ipfs/Qmao1RYVpBnifHKLpVLKXxw7tz8CcJDFKGm2zBx2wo8z4h"
 			]
 		}
 	},
